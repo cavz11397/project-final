@@ -1,8 +1,14 @@
+import { StoreProvider } from "./store/StoreProvider";
+import AppRouter from "./router/AppRouter";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div>
-      <h1>HOLA</h1>
+    <div className="App">
+      <StoreProvider>
+        <AppRouter />
+      </StoreProvider>
     </div>
   );
 }
