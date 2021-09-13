@@ -18,10 +18,8 @@ import ReplayIcon from '@material-ui/icons/Replay';
 
 import Swal from 'sweetalert2';
 
-import Interrogacion from '../images/interrogacion.png';
 import Batman from '../images/batman.png';
 import StarWars from '../images/starwars.png';
-import DC from '../images/dc.png';
 
 const pinta = {
     'HEARTS': 4,
