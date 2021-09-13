@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import StoreContext from '../store/StoreProvider';
@@ -154,12 +154,22 @@ const Users = () => {
         return (
             <React.Fragment>
                 <Col md={2}>
-                    <Row>
-                        <Col><User player={users.player1} image={Batman} /></Col>
-                    </Row>
-                    <Row>
-                        <Col><User player={users.player2} image={StarWars} /><h1>{show}</h1></Col>
-                    </Row>
+                    <Card >
+                        <Card.Body>
+                            <Card.Text>
+                                <Row>
+                                    <Col>
+                                        <User player={users.player1} image={Batman} />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <User player={users.player2} image={StarWars} />
+                                    </Col>
+                                </Row>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
                     <Row>
                         <Col >
                             {
@@ -205,8 +215,8 @@ const Users = () => {
                         {
                             winner1.length >= 2
                                 ?
-                                winner1.map(item =>
-                                    <Col md={3}>
+                                winner1.map((item, index) =>
+                                    <Col md={3} key={index}>
                                         <Cards image={item.image} />
                                     </Col>)
                                 :
@@ -215,8 +225,8 @@ const Users = () => {
                         {
                             winner2.length >= 2
                                 ?
-                                winner2.map(item =>
-                                    <Col md={3}>
+                                winner2.map((item, index) =>
+                                    <Col md={3} key={index}>
                                         <Cards image={item.image} />
                                     </Col>)
                                 :
